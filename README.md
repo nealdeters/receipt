@@ -1,3 +1,5 @@
+[![Tests](https://github.com/nealdeters/sales_tax/actions/workflows/tests.yml/badge.svg)](https://github.com/nealdeters/sales_tax/actions/workflows/tests.yml)
+
 # Sales Tax
 Application to intake product information and output into an itemized receipt.
 
