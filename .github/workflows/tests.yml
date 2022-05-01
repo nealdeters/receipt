@@ -1,0 +1,24 @@
+name: CI RSpec Tests
+
+on: 
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+
+      - name: Run bundle install
+        run: |
+          gem install bundler
+          bundle install --retry 3
+
+      - name: Build and test with rspec
+        run: bundle exec rspec spec
