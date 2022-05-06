@@ -16,6 +16,11 @@ describe "cart" do
     expect(cart.products.length).to eq(1)
   end
 
+  it "should throw argument error on adding of invalid product" do
+    cart = Cart.new()
+    expect{ cart.add("test") }.to raise_error(ArgumentError)
+  end
+
   it "quantity price" do
     cart = Cart.new()
     total_price = cart.quantity_price(14.99, 1.5, 1)

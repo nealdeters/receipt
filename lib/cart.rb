@@ -6,6 +6,8 @@ class Cart
   end
 
   def add(product)
+    raise ArgumentError, 'Invalid Product.' if !product.is_a?(Product)
+
     @products.push(product)
   end
 
